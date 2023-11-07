@@ -1,0 +1,100 @@
+﻿@model RequestsViewModel
+@{
+ ViewData["Title"] = "Order";
+    Layout = "_Layout";
+}
+@section stylecss{
+    <style>
+    th ,td{
+        font-size:1.2rem;
+    }
+    img{
+        width:4rem;
+    }
+    label{
+        font-size:1.2rem;
+    }
+    </style>
+}
+<div class="heading">
+   <p> <span> checkout</span></p>
+</div>
+
+<section class="checkout">
+
+   <form asp-action="AddOrder" asp-controller="Order">
+      <div class="cart-items">
+         <h3>cart items</h3>
+     <div id="content" style="overflow-x:auto"> 
+        <table class="table table-bordered  table-striped table-hover">
+            <thead class=" text-center" style="background:#2b6777 ;color:white">
+                <tr style="margin:auto">
+                    <th>Name</th>
+                    <th>Brand</th>
+                     <th>Country O Origin</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>TotalPrice</th>
+                    <th>Image</th>
+                 </tr>
+                 </thead>
+                 <tbody class="m-1">
+                     @foreach(var item in @Model.ordersRequests)
+                         {
+                      <tr style="margin:auto">
+                        <td>@item.Ordername</td>
+                        <td>@if (@item.BrandName is not null)
+                            {
+                                @item.BrandName
+                            }
+                        </td>
+                        <td>@if (@item.CountryOfOrigin is not null)
+                            {
+                                @item.CountryOfOrigin
+                            }
+                        </td>
+                        <td>@item.PriceOrder EGP</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.TotalPriceOrder EGP</td>
+                        <td>
+                            <img src="~/uploaded_img/@item.imgpath" class="img-thumbnail">
+                        </td>
+                     </tr>
+                         }
+                 </tbody>
+        </table>
+
+        
+   </div>
+   
+   <p class="grand-total"><span class="name">grand total :</span> <span class="price">@ViewBag.totalprice EGP</span></p>
+         <a asp-action="Index" asp-controller="Cart" class="btn">view cart</a>
+      </div>
+      <div asp-validation-summary="All" class="text-danger" ></div>
+      <input type="hidden" asp-for="UserId" />
+      <input type="hidden" asp-for="TotalPrice" value="@ViewBag.totalprice" />
+           <input type="hidden" asp-for="UserName">     
+           <input type="hidden" asp-for="Email"  >
+
+
+       <div class="form-group">
+           <label asp-for="Address" class="form-label"></label>
+           <input type="text" asp-for="Address" maxlength="50" minlength="5" placeholder="enter name"   class="form-control">
+       </div>
+     
+       <div class="form-group">
+           <label asp-for="PhoneNumber"  class="form-label"></label>
+           <input type="tel" asp-for="PhoneNumber" maxlength="11"  placeholder="enter your phone" class="form-control">
+       </div>
+      <div class="form-group">
+           <label   class="form-label">Way to pay</label>
+           <input type="text" disabled value="cash on delivery" class="form-control">
+       </div>
+    
+      <input type="submit" value="Add order" class="btn order-btn">
+   </form>
+
+</section>
+ @section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,625 @@
+﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+	
+}
+@section stylecss{
+	    <link rel="stylesheet" href="~/css/HorizontalMenu.css">
+
+<style>
+	#Htitle{
+		font-weight:300;
+		color:white;
+		padding:.5rem 2rem;
+		font-size:1.5rem;
+	}
+	#seeall{
+		color:black;
+		background-color:white;
+		width:fit-content;
+		height:fit-content;
+		border-radius:.8rem;
+		padding:.5rem;
+		font-size:1.2rem;
+
+	}
+	#seeall:hover {
+    color: white;
+	background-color:black;
+}
+#brand{
+	width:16rem;
+	height:11rem;
+	border-radius:.3rem;
+}
+</style>
+}
+@if (ViewBag.ListCategories is not null && ViewBag.ListCategories.Count>0)
+{
+	<div class="container">
+		<div class="main" >
+			<nav id="cbp-hrmenu" class="cbp-hrmenu">
+				<ul>
+					@foreach (var item in ViewBag.ListCategories)
+					{
+						@if(item.SubCategories is not null && item.SubCategories.Count >0)
+						{
+							
+								int Consumables = 0;
+	                            int Instrument = 0;
+                            	int Equipment = 0;
+							
+							<li>
+							<a href="#">@item.Name</a>
+							<div class="cbp-hrsub">
+								<div class="cbp-hrsub-inner"> 
+									@foreach (var sub in item.SubCategories)
+									{
+											
+									    @if (sub.Type.Equals("Consumables") && Consumables<1)
+										{
+											<div>
+												<h4>Consumables</h4>
+												@{
+													Consumables ++;
+												}
+												<ul>
+													@foreach (var cat in item.SubCategories)
+													{
+														@if (cat.Type.Equals("Consumables"))
+														{
+																	<li><a asp-action="Index" asp-controller="ShowProduct" asp-route-categoryid="@cat.Id" asp-route-categoryname="@cat.Name">@cat.Name</a></li>
+														}
+													}
+												</ul>
+											</div>
+										}
+
+										@if (sub.Type.Equals("Instrument")&& Instrument<1)
+										{
+											<div>
+												<h4>Instrument</h4>
+												@{
+													Instrument ++;
+												}
+												<ul>
+                                                @foreach (var cat in item.SubCategories)
+													{
+														@if (cat.Type.Equals("Instrument"))
+														{
+																	<li><a asp-action="Index" asp-controller="ShowProduct" asp-route-categoryid="@cat.Id" asp-route-categoryname="@cat.Name">@cat.Name</a></li>
+														}
+													}												
+												</ul>
+											</div>
+										}
+
+										@if (sub.Type.Equals("Equipment")&& Equipment<1)
+										{
+											<div>
+												<h4>Equipment</h4>
+												@{
+													Equipment ++;
+												}
+
+												<ul>
+													 @foreach (var cat in item.SubCategories)
+													{
+														@if (cat.Type.Equals("Equipment"))
+														{
+																	<li><a asp-action="Index" asp-controller="ShowProduct" asp-route-categoryid="@cat.Id" asp-route-categoryname="@cat.Name">@cat.Name</a></li>
+														}
+													}
+												</ul>
+											</div>
+										}
+
+										@if(Consumables ==1 && Instrument ==1 && Equipment==1)
+										{
+												break;
+									   }
+									}
+								</div>
+							</div>
+						</li>
+						}
+						
+					}
+				</ul>
+			</nav>
+		</div>
+	</div>
+}
+
+
+
+@if (ViewBag.ListProductDiscount is not null && ViewBag.ListProductDiscount.Count>1)
+{
+
+
+  <div class="products shopping-cart" style="margin-top:8rem">
+	<div class="row col-12">
+		<div class=" col-6 d-flex ">
+			<h1  id="Htitle">Exclusive Offers</h1>
+        </div>
+		<div class=" col-6 d-flex justify-content-end">
+			<a class="ml-auto justify-content-end" id="seeall" asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortHighDiscount">See All</a>
+		</div>
+	</div>
+<div id="myCarousel" class="carousel slide container-fluid" data-bs-ride="carousel">
+  <div class="carousel-inner col-12 row">
+
+	
+				@for(var item=0;item<= ViewBag.ListProductDiscount.Count-1;item++)
+				{	
+					
+					@if(item==0)
+					{
+						<div class="carousel-item active"id="item0">
+							
+                      <div class=" col-md-4 ">
+
+						<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.ListProductDiscount[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.ListProductDiscount[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.ListProductDiscount[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.ListProductDiscount[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.ListProductDiscount[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.ListProductDiscount[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.ListProductDiscount[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.ListProductDiscount[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.ListProductDiscount[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.ListProductDiscount[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.ListProductDiscount[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.ListProductDiscount[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.ListProductDiscount[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.ListProductDiscount[item].BurOrderNumber"/>
+								 <input type="hidden"asp-for="ProductId" value="@ViewBag.ListProductDiscount[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.ListProductDiscount[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.ListProductDiscount[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.ListProductDiscount[item].imgpath" alt="">
+								<div class="name">@ViewBag.ListProductDiscount[item].Ordername</div>
+							
+								@if (@ViewBag.ListProductDiscount[item].Price>@ViewBag.ListProductDiscount[item].DiscountPrice )
+								{
+									<span class="oldprice">@ViewBag.ListProductDiscount[item].Price EGP</span>
+									<span class="discount">@ViewBag.ListProductDiscount[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+									
+										<div class="price">@ViewBag.ListProductDiscount[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.ListProductDiscount[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+								 <button type="submit" class="fas fa-shopping-cart" name="update_qty"></button>
+								</div>
+
+							 </form>
+
+
+						</div>
+
+						</div>
+						</div>
+					}
+					else
+					{
+						<div class="carousel-item " id="item0">
+							
+                     <div class=" col-md-4">                      
+						  
+						<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.ListProductDiscount[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.ListProductDiscount[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.ListProductDiscount[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.ListProductDiscount[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.ListProductDiscount[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.ListProductDiscount[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.ListProductDiscount[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.ListProductDiscount[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.ListProductDiscount[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.ListProductDiscount[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.ListProductDiscount[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.ListProductDiscount[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.ListProductDiscount[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.ListProductDiscount[item].BurOrderNumber"/>
+								<input type="hidden"asp-for="ProductId" value="@ViewBag.ListProductDiscount[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.ListProductDiscount[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.ListProductDiscount[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.ListProductDiscount[item].imgpath" alt="">
+								<div class="name">@ViewBag.ListProductDiscount[item].Ordername</div>
+							
+								@if (@ViewBag.ListProductDiscount[item].Price>@ViewBag.ListProductDiscount[item].DiscountPrice )
+								{
+									<span class="oldprice">@ViewBag.ListProductDiscount[item].Price EGP</span>
+									<span class="discount">@ViewBag.ListProductDiscount[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+								
+										<div class="price">@ViewBag.ListProductDiscount[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.ListProductDiscount[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+							 <button type="submit" class="fas fa-shopping-cart" name="update_qty"></button>
+							</div>
+
+                            </form>
+
+
+						</div>
+				  
+				   </div>
+				   </div>
+					}
+                
+					
+				}
+     
+
+    </div>
+  <button class="carousel-control-prev " style="width:4rem" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden ">Previous</span>
+  </button>
+  <button class="carousel-control-next " style="width:4rem" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden ">Next</span>
+  </button>
+</div>
+   </div>
+}
+
+
+
+
+
+@if (ViewBag.ListProductNew is not null && ViewBag.ListProductNew.Count>1)
+{
+  <div class="products shopping-cart" style="margin-top:8rem">
+	<div class="row col-12">
+		<div class=" col-6 d-flex ">
+			<h1  id="Htitle">New Products</h1>
+        </div>
+		<div class=" col-6 d-flex justify-content-end">
+			<a class="ml-auto justify-content-end" id="seeall" asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortNewProducts">See All</a>
+		</div>
+	</div>
+
+
+<div id="myCarousel1" class="carousel slide container-fluid" data-bs-ride="carousel">
+  <div class="carousel-inner col-12 row">
+
+	
+				@for(var item=0;item<= ViewBag.ListProductNew.Count-1;item++)
+				{	
+					
+					@if(item==0)
+					{
+						<div class="carousel-item active" id="item1">
+							<div class="col-md-4">
+                      
+						<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.ListProductNew[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.ListProductNew[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.ListProductNew[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.ListProductNew[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.ListProductNew[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.ListProductNew[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.ListProductNew[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.ListProductNew[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.ListProductNew[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.ListProductNew[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.ListProductNew[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.ListProductNew[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.ListProductNew[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.ListProductNew[item].BurOrderNumber"/>
+								<input type="hidden"asp-for="ProductId" value="@ViewBag.ListProductNew[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.ListProductNew[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.ListProductNew[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.ListProductNew[item].imgpath" alt="">
+								<div class="name">@ViewBag.ListProductNew[item].Ordername</div>
+							
+								@if (@ViewBag.ListProductNew[item].Price>@ViewBag.ListProductNew[item].DiscountPrice )
+								{
+									<span class="oldprice">@ViewBag.ListProductNew[item].Price EGP</span>
+									<span class="discount">@ViewBag.ListProductNew[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+									
+										<div class="price">@ViewBag.ListProductNew[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.ListProductNew[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+								
+								 <button type="submit" class="fas fa-shopping-cart"  name="update_qty"></button>
+							</div>
+							 </form>
+
+
+						</div>
+				 </div>
+				 </div>
+					}
+					else
+					{
+				    <div class="carousel-item " id="item1">
+							
+                     <div class="col-md-4">
+							<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.ListProductNew[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.ListProductNew[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.ListProductNew[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.ListProductNew[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.ListProductNew[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.ListProductNew[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.ListProductNew[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.ListProductNew[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.ListProductNew[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.ListProductNew[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.ListProductNew[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.ListProductNew[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.ListProductNew[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.ListProductNew[item].BurOrderNumber"/>
+								<input type="hidden"asp-for="ProductId" value="@ViewBag.ListProductNew[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.ListProductNew[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.ListProductNew[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.ListProductNew[item].imgpath" alt="">
+								<div class="name">@ViewBag.ListProductNew[item].Ordername</div>
+							
+								@if (@ViewBag.ListProductNew[item].Price>@ViewBag.ListProductNew[item].DiscountPrice )
+								{
+									<span class="oldprice" >@ViewBag.ListProductNew[item].Price EGP</span>
+									<span class="discount">@ViewBag.ListProductNew[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+									
+										<div class="price">@ViewBag.ListProductNew[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.ListProductNew[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+								 <button type="submit" class="fas fa-shopping-cart"  name="update_qty"></button>
+							</div>
+							 </form>
+							</div>
+							</div>
+
+						</div>
+				   
+					}
+                
+					
+				}
+     
+
+    </div>
+  <button class="carousel-control-prev " style="width:4rem" type="button" data-bs-target="#myCarousel1" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next " style="width:4rem" type="button" data-bs-target="#myCarousel1" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+</div>
+}
+
+
+
+
+
+
+
+
+@if (ViewBag.ListBrand is not null && ViewBag.ListBrand.Count>1)
+{
+<div class="products" style="margin:8rem 0">
+
+		<div class="row col-12">
+		<div class=" col-6 d-flex ">
+			<h1  id="Htitle">Shop By Brand</h1>
+        </div>
+		<div class=" col-6 d-flex justify-content-end">
+			<a class="ml-auto justify-content-end" id="seeall" asp-action="GetAllBrands" asp-controller="ShowProduct">See All</a>
+		</div>
+	</div>
+
+<div id="myCarousel3" class="carousel slide container-fluid" data-bs-ride="carousel">
+  <div class="carousel-inner col-12 row">
+
+				@for (var item=0;item<= ViewBag.ListBrand.Count-1;item++)
+				{
+					@if(item==0)
+					{
+					<div class="carousel-item active" id="item3">
+					  <div class="col-md-4">
+						<div style="justify-content:center;display:flex;" >
+						<a asp-action="Index" asp-controller="ShowProduct" asp-route-brandid="@ViewBag.ListBrand[item].Id" asp-route-brandname="@ViewBag.ListBrand[item].Name">
+						  <img  id="brand"  src="~/uploaded_img/@ViewBag.ListBrand[item].imgpath">
+							</a>
+						</div>
+					  </div>
+					</div>
+
+
+					}
+					else
+					{
+					<div class="carousel-item " id="item3">
+					  <div class="col-md-4">
+						<div style="justify-content:center;display:flex;" >
+						<a asp-action="Index" asp-controller="ShowProduct" asp-route-brandid="@ViewBag.ListBrand[item].Id" asp-route-brandname="@ViewBag.ListBrand[item].Name">
+						  <img  id="brand"  src="~/uploaded_img/@ViewBag.ListBrand[item].imgpath">
+							</a>
+						</div>
+					  </div>
+					</div>
+					}
+				}
+
+			 </div>
+  <button class="carousel-control-prev " style="width:4rem" type="button" data-bs-target="#myCarousel3" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next " style="width:4rem" type="button" data-bs-target="#myCarousel3" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts{
+<script>
+
+	$(function() {
+				cbpHorizontalMenu.init();
+			});
+
+</script>
+
+
+<script>
+
+
+		$('.carousel #item0').each(function(){
+	      
+				var minPerSlide = 3;
+				var next = $(this).next();
+				if (!next.length) {
+				next = $(this).siblings(':first');
+				}
+				next.children(':first-child').clone().appendTo($(this));
+    
+				for (var i=0;i<minPerSlide;i++) {
+					next=next.next();
+					if (!next.length) {
+        				next = $(this).siblings(':first');
+      				}
+        
+					next.children(':first-child').clone().appendTo($(this));
+				  }
+           
+          
+	});
+
+</script>
+
+
+<script>
+
+
+$('.carousel #item1').each(function(){
+    var minPerSlide1 = 3;
+    var next1 = $(this).next();
+    if (!next1.length) {
+    next1 = $(this).siblings(':first');
+    }
+    next1.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide1;i++) {
+        next1=next1.next();
+        if (!next1.length) {
+        	next1 = $(this).siblings(':first');
+      	}
+        
+        next1.children(':first-child').clone().appendTo($(this));
+      }
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+
+
+$('.carousel #item3').each(function(){
+    var minPerSlide3 = 3;
+    var next3 = $(this).next();
+    if (!next3.length) {
+    next3 = $(this).siblings(':first');
+    }
+    next3.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide3;i++) {
+        next3=next3.next();
+        if (!next3.length) {
+        	next3 = $(this).siblings(':first');
+      	}
+        
+        next3.children(':first-child').clone().appendTo($(this));
+      }
+});
+
+
+
+
+</script>
+
+
+
+
+
+
+ <script src="~/js/HorizontalMenuScript.js"></script>
+
+    <partial name="_ValidationScriptsPartial" />
+}
+	

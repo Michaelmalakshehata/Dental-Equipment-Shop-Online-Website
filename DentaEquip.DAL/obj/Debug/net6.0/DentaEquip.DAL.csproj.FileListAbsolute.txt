@@ -1,0 +1,14 @@
+F:\project\DentaEquip\DentaEquip.DAL\bin\Debug\net6.0\DentaEquip.DAL.deps.json
+F:\project\DentaEquip\DentaEquip.DAL\bin\Debug\net6.0\DentaEquip.DAL.runtimeconfig.json
+F:\project\DentaEquip\DentaEquip.DAL\bin\Debug\net6.0\DentaEquip.DAL.dll
+F:\project\DentaEquip\DentaEquip.DAL\bin\Debug\net6.0\DentaEquip.DAL.pdb
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.csproj.AssemblyReference.cache
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.AssemblyInfoInputs.cache
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.AssemblyInfo.cs
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.csproj.CoreCompileInputs.cache
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.dll
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\refint\DentaEquip.DAL.dll
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.pdb
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\DentaEquip.DAL.genruntimeconfig.cache
+F:\project\DentaEquip\DentaEquip.DAL\obj\Debug\net6.0\ref\DentaEquip.DAL.dll

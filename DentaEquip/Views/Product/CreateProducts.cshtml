@@ -1,0 +1,106 @@
+﻿@model ProductViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+    SelectList categorylist = new SelectList(ViewBag.list, "Id", "Name");
+    SelectList brandList = new SelectList(ViewBag.listBrand, "Id", "Name");
+}
+
+<div class="form">
+
+   <form asp-action="CreateProducts" asp-controller="Product" enctype="multipart/form-data">
+       <div asp-validation-summary="All" class="text-danger" ></div>
+       <div class="row">
+       <div class="col">
+           <label asp-for="Name" ></label>
+           <input type="text" asp-for="Name" maxlength="30" minlength="2" placeholder="enter name" class="form-control" autofocus>
+       </div>
+       <div class="col">
+           <label asp-for="Price" ></label>
+           <input type="number" asp-for="Price" min="1" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="Quantity" ></label>
+           <input type="number" asp-for="Quantity" min="1" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="Discount" ></label>
+           <input type="number" asp-for="Discount" min="1" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="Detailes" ></label>
+           <textarea type="text" asp-for="Detailes" id="area"  maxlength="100" minlength="2" placeholder="enter detailes" class="form-control" multiple></textarea>
+       </div>
+       <div class="col">
+           <label asp-for="File" ></label>
+           <input type="file"accept="image/*" asp-for="File" class="form-control" >
+       </div>
+        <div class="col">
+           <label asp-for="File2" ></label>
+           <input type="file"accept="image/*" asp-for="File2" class="form-control" >
+       </div>
+        <div class="col">
+           <label asp-for="File3" ></label>
+           <input type="file"accept="image/*" asp-for="File3" class="form-control" >
+       </div>
+        <div class="col">
+           <label asp-for="Shade" ></label>
+           <input type="text" asp-for="Shade" maxlength="30" minlength="2" placeholder="enter Shade" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="CureType" ></label>
+           <input type="text" asp-for="CureType" maxlength="30" minlength="2" placeholder="enter CureTpe" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="CountryOfOrigin" ></label>
+           <input type="text" asp-for="CountryOfOrigin" maxlength="30" minlength="2" placeholder="enter CountryOfOrigin" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="BurColorCode" ></label>
+           <input type="text" asp-for="BurColorCode" maxlength="30" minlength="2" placeholder="enter BurColorCode" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="BurMaximumRPM"></label>
+           <input type="number" asp-for="BurMaximumRPM" min="1" class="form-control" >
+       </div>
+         <div class="col">
+           <label asp-for="BurShape" ></label>
+           <input type="text" asp-for="BurShape" maxlength="30" minlength="2" placeholder="enter BurShape" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="BurOrderNumber" ></label>
+           <input type="text" asp-for="BurOrderNumber" maxlength="30" minlength="2" placeholder="enter BurOrderNumber" class="form-control" >
+       </div>
+       <div class="col">
+           <label asp-for="FileMaterial" ></label>
+           <input type="text" asp-for="FileMaterial" maxlength="30" minlength="2" placeholder="enter FileMaterial" class="form-control" >
+       </div>
+         <div class="col">
+           <label asp-for="FileShape" ></label>
+           <input type="text" asp-for="FileShape" maxlength="30" minlength="2" placeholder="enter FileShape" class="form-control" >
+       </div>
+        <div class="col">
+           <label asp-for="BrandId">Brand Name</label>
+           <select asp-items="brandList" asp-for="BrandId"  class="form-select" >
+               <option value="0" selected>Select Brand</option>
+           </select>
+       </div>
+       <div class="col">
+           <label aasp-for="CategoryId">Category Name </label>
+           <select asp-items="categorylist"  asp-for="CategoryId" class="form-select" >
+
+           </select>
+       </div>
+      </div>
+       <input type="submit" value="Create" class="bt">
+   </form>
+
+</div>
+
+
+ 
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+}

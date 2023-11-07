@@ -1,0 +1,993 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DentaEquip.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DentaEquip.bundle.scp.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\about-img.svg",
+      "PackagePath": "staticwebassets\\Images\\about-img.svg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\bg.jpg",
+      "PackagePath": "staticwebassets\\Images\\bg.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\contact-img.svg",
+      "PackagePath": "staticwebassets\\Images\\contact-img.svg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\loading.gif",
+      "PackagePath": "staticwebassets\\Images\\loading.gif"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\starfade.png",
+      "PackagePath": "staticwebassets\\Images\\starfade.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\starglow.png",
+      "PackagePath": "staticwebassets\\Images\\starglow.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\step-1.png",
+      "PackagePath": "staticwebassets\\Images\\step-1.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\step-2.png",
+      "PackagePath": "staticwebassets\\Images\\step-2.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\tree.png",
+      "PackagePath": "staticwebassets\\Images\\tree.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Images\\user-icon.png",
+      "PackagePath": "staticwebassets\\Images\\user-icon.png"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\Templates\\EmailTemplate.html",
+      "PackagePath": "staticwebassets\\Templates\\EmailTemplate.html"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\AdminStyle.css",
+      "PackagePath": "staticwebassets\\css\\AdminStyle.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\Carousel.css",
+      "PackagePath": "staticwebassets\\css\\Carousel.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\FilterProductMenu.css",
+      "PackagePath": "staticwebassets\\css\\FilterProductMenu.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\HorizontalMenu.css",
+      "PackagePath": "staticwebassets\\css\\HorizontalMenu.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\LoadngStyle.css",
+      "PackagePath": "staticwebassets\\css\\LoadngStyle.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\SortMenu.css",
+      "PackagePath": "staticwebassets\\css\\SortMenu.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\css\\verticalmenu.css",
+      "PackagePath": "staticwebassets\\css\\verticalmenu.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\js\\HorizontalMenuScript.js",
+      "PackagePath": "staticwebassets\\js\\HorizontalMenuScript.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\js\\MainScript.js",
+      "PackagePath": "staticwebassets\\js\\MainScript.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\js\\Script.js",
+      "PackagePath": "staticwebassets\\js\\Script.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-easing\\jquery.easing.compatibility.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-easing\\jquery.easing.compatibility.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-easing\\jquery.easing.compatibility.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-easing\\jquery.easing.compatibility.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-easing\\jquery.easing.compatibility.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\jquery-easing\\jquery.easing.compatibility.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-easing\\jquery.easing.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-easing\\jquery.easing.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-easing\\jquery.easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-easing\\jquery.easing.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_maps.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_maps.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_placeholders.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_placeholders.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_variables-dark.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_variables-dark.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_color-bg.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_color-bg.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_focus-ring.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_focus-ring.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_icon-link.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_icon-link.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_stacks.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_stacks.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\helpers\\_vr.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\helpers\\_vr.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_backdrop.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_backdrop.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_banner.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_banner.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_color-mode.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_color-mode.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\lib\\twitter-bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\lib\\twitter-bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\02d69ced-bd2c-4284-84c9-6606b9400f04_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\02d69ced-bd2c-4284-84c9-6606b9400f04_2.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\0efd67cc-78bd-4b4c-af96-65bd0a4e37d3_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\0efd67cc-78bd-4b4c-af96-65bd0a4e37d3_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\126334eb-7b83-4251-a39e-811bc6bc08f5_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\126334eb-7b83-4251-a39e-811bc6bc08f5_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\18d63f1e-f893-4dfd-942b-3fdef4a3c9f3_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\18d63f1e-f893-4dfd-942b-3fdef4a3c9f3_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\1972d9e8-b230-4b97-8a6a-ab8f247bec31_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\1972d9e8-b230-4b97-8a6a-ab8f247bec31_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\1a01d930-30b6-49f5-b88e-881dc61c4abf_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\1a01d930-30b6-49f5-b88e-881dc61c4abf_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\1b1835bc-84da-4d1f-bda7-a101c76f9c11_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\1b1835bc-84da-4d1f-bda7-a101c76f9c11_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\1bb9af56-23ce-462f-9c16-1f448c8f1d25_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\1bb9af56-23ce-462f-9c16-1f448c8f1d25_2.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\1f4c065b-db58-41ed-b24e-2dc41dfb5a06_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\1f4c065b-db58-41ed-b24e-2dc41dfb5a06_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\247fe1ae-bc5c-4a1c-ad85-f39c5633923a_15.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\247fe1ae-bc5c-4a1c-ad85-f39c5633923a_15.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\31758d5a-a9ab-45d9-ad02-c4b7370648d7_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\31758d5a-a9ab-45d9-ad02-c4b7370648d7_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\351e44ac-9a9e-44c6-bfa1-7040cc71711b_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\351e44ac-9a9e-44c6-bfa1-7040cc71711b_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\4a06a7af-3fa1-488a-ab27-d3681d2a81c3_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\4a06a7af-3fa1-488a-ab27-d3681d2a81c3_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\4db13e80-ec4c-4350-b1f9-f61782ee4865_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\4db13e80-ec4c-4350-b1f9-f61782ee4865_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\4e7b1f09-0b3d-4a88-8ec4-58637d770419_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\4e7b1f09-0b3d-4a88-8ec4-58637d770419_2.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\587bdccb-afe7-45d1-a95a-87ba0d188498_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\587bdccb-afe7-45d1-a95a-87ba0d188498_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\58ab27f3-2a04-4c9a-90b7-56bc490693ab_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\58ab27f3-2a04-4c9a-90b7-56bc490693ab_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\597b37ec-4f58-4eb0-95cc-e82426bd30a8_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\597b37ec-4f58-4eb0-95cc-e82426bd30a8_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\5fe3d266-fbe0-4566-ba79-88dcf3c2457a_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\5fe3d266-fbe0-4566-ba79-88dcf3c2457a_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\643c9f22-57a6-468d-befd-19f5eded3c3c_19.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\643c9f22-57a6-468d-befd-19f5eded3c3c_19.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\64a76ff6-48d3-49b6-b573-333e648b8319_13.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\64a76ff6-48d3-49b6-b573-333e648b8319_13.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\668d205b-52f3-4391-9fb0-ff8a97f649f1_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\668d205b-52f3-4391-9fb0-ff8a97f649f1_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\77846923-4fff-42fb-86cc-9b3f6b311961_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\77846923-4fff-42fb-86cc-9b3f6b311961_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\7bad6b64-8354-4ef0-936c-3bd668b40aea_23.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\7bad6b64-8354-4ef0-936c-3bd668b40aea_23.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\9f1782b4-41c4-43c2-b457-5e7b5cb1360f_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\9f1782b4-41c4-43c2-b457-5e7b5cb1360f_2.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\9f393906-900a-46d5-a0f3-2cc71a9d3cf6_19.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\9f393906-900a-46d5-a0f3-2cc71a9d3cf6_19.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\a33fef20-8716-49d0-bd8e-0b65af8e7435_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\a33fef20-8716-49d0-bd8e-0b65af8e7435_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\a529ba8a-75a7-40e3-913d-8dbc64ac4e7f_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\a529ba8a-75a7-40e3-913d-8dbc64ac4e7f_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\a736f8e1-7118-4261-8c4d-127e417ae769_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\a736f8e1-7118-4261-8c4d-127e417ae769_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\aa217e36-bb34-49f3-84c7-f96aacd2b0af_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\aa217e36-bb34-49f3-84c7-f96aacd2b0af_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\ad917124-b0cd-4e81-9b09-b13ca1e9b433_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\ad917124-b0cd-4e81-9b09-b13ca1e9b433_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\b14839e5-2e2d-4495-ba57-210d032ad8fd_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\b14839e5-2e2d-4495-ba57-210d032ad8fd_2.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\b51c59f0-8d18-4424-8a69-419a07cc8ea1_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\b51c59f0-8d18-4424-8a69-419a07cc8ea1_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\b7f44be9-7271-4792-9f35-1df40b2dfc95_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\b7f44be9-7271-4792-9f35-1df40b2dfc95_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\b9539e1f-e390-48de-b682-014e72861d4e_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\b9539e1f-e390-48de-b682-014e72861d4e_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\c13213fa-6bf5-417f-9c53-08a7d780098c_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\c13213fa-6bf5-417f-9c53-08a7d780098c_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\c9608d5d-17aa-4a6f-b941-f8c6fd9a9056_5.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\c9608d5d-17aa-4a6f-b941-f8c6fd9a9056_5.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\ca9d883d-2c42-4d2b-bffe-551a8e108a22_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\ca9d883d-2c42-4d2b-bffe-551a8e108a22_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\cce35ddf-9cd1-4a74-9727-5f7e22dd2341_3.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\cce35ddf-9cd1-4a74-9727-5f7e22dd2341_3.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\de05197f-c970-45a6-a477-2c62bdfb6953_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\de05197f-c970-45a6-a477-2c62bdfb6953_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\e8d38520-faaa-427b-af0b-192a7606383a_20.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\e8d38520-faaa-427b-af0b-192a7606383a_20.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\e9e87e92-4f81-4700-9081-92566856c6f2_4.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\e9e87e92-4f81-4700-9081-92566856c6f2_4.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\f2cea88a-a0de-4994-bcea-bb536fa7cf52_6.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\f2cea88a-a0de-4994-bcea-bb536fa7cf52_6.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\fe7c3e2e-8e79-43ea-bb09-701b6cc5f0f7_1.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\fe7c3e2e-8e79-43ea-bb09-701b6cc5f0f7_1.jpg"
+    },
+    {
+      "Id": "F:\\project\\DentaEquip\\DentaEquip\\wwwroot\\uploaded_img\\fe91e895-503f-43a5-bb78-3c8193d168d9_2.jpg",
+      "PackagePath": "staticwebassets\\uploaded_img\\fe91e895-503f-43a5-bb78-3c8193d168d9_2.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.DentaEquip.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.DentaEquip.props",
+      "PackagePath": "build\\DentaEquip.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.DentaEquip.props",
+      "PackagePath": "buildMultiTargeting\\DentaEquip.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.DentaEquip.props",
+      "PackagePath": "buildTransitive\\DentaEquip.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

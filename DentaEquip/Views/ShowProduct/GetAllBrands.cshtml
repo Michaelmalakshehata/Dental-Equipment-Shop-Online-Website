@@ -1,0 +1,68 @@
+﻿@model List<Brand>
+@{
+    Layout = "_Layout";
+    Pager pager=new Pager();
+    int pageNo=0;
+    if(ViewBag.Pager is not null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+
+<div class="products" style="margin:3rem 0">
+
+     @if(@Model is not null && @Model.Count>0)
+    {
+        <div class="box-container">
+        @foreach(var item in @Model)
+        {
+                      <div class="box" style="justify-content:center;display:flex;">
+						<a asp-action="Index" asp-controller="ShowProduct" asp-route-brandid="@item.Id" asp-route-brandname="@item.Name">
+						  <img  width="150rem" height="150rem"  src="~/uploaded_img/@item.imgpath">
+							</a>
+                      	<div class="name">@item.Name</div>
+
+						</div> 
+
+        }
+       </div> 
+    }
+
+</div>
+
+
+<br />
+        <nav class="...">
+            @if(pager.TotalPages>0)
+            {
+                <ul class="pagination justify-content-center pagination-lg">
+                    @if(pager.CurrentPage>1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"asp-action="GetAllBrands" asp-controller="ShowProduct" asp-route-pg="1">Frist</a>
+                        </li>  
+                        <li>
+                            <a class="page-link"asp-action="GetAllBrands" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                        </li>
+                    }
+                    @for(var pge =pager.StartPage;pge <= pager.EndPage;pge++)
+                    {
+                        <li class="page-item" @(pge==pager.CurrentPage? "active" :"")>
+                            <a class="page-link"asp-action="GetAllBrands" asp-controller="ShowProduct" asp-route-pg="@pge">@pge</a>
+                        </li>
+                    }
+                    @if(pager.CurrentPage<pager.TotalPages)
+                    {
+                       <li class="page-item">
+                            <a class="page-link"asp-action="GetAllBrands" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                        </li> 
+                        <li class="page-item">
+                            <a class="page-link"asp-action="GetAllBrands" asp-controller="ShowProduct" asp-route-pg="@(pager.TotalPages)">Last</a>
+                        </li> 
+                    }
+
+                </ul>
+            }
+        </nav>

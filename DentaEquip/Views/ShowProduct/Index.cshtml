@@ -1,0 +1,775 @@
+﻿@model ShowProductViewModel
+@{
+	Layout = "_Layout";
+	Pager pager=new Pager();
+	int pageNo=0;
+	decimal max = 0;
+	decimal min = 0;
+	if(ViewBag.list is not null && ViewBag.list.Count>0)
+	{
+		max = ViewBag.Filter.HighPrice -1;
+		min = ViewBag.Filter.LowPrice + 1;
+		
+	}
+	if(ViewBag.Pager is not null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+@section stylecss{
+			   
+
+	<link rel="stylesheet" href="~/css/FilterProductMenu.css">
+	<style>
+		.renderbody {
+        min-height:150vh;
+     }
+		.btn{
+    display: block;
+    width: 30%;
+    margin: .5rem;
+    border-radius: .4rem;
+    padding: .4rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--white);
+    cursor: pointer;
+    text-align: center;
+}
+
+    .btn:hover{
+        background-color: #9fc1d7;
+    }
+
+.btn {
+    background-color: #2980b9;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn)
+{
+	width:12rem;
+}
+.starGlowN{
+	background-size:1rem 1rem;
+	width:1rem;
+	height:1rem;
+}
+.starFadeN{
+	background-size:1rem 1rem;
+	width:1rem;
+	height:1rem;
+}
+.review{
+ padding: 0.3rem .2rem;
+}
+.products .box-container {
+    grid-template-columns: repeat(auto-fit, 22rem);
+  
+}
+	</style>
+
+}
+
+
+
+
+
+        <div class="primary-nav">
+
+	<button href="#" class="hamburger open-panel nav-toggle">
+<span class="screen-reader-text">Menu</span>
+</button>
+
+	<nav role="navigation" class="menu">
+
+		<div class="overflow-container">
+
+			<ul class="menu-dropdown">
+				<form asp-action="Index" asp-controller="ShowProduct" method="get" id="myform">
+				<li style="justify-content:center;display:flex"><a href="#">Filter And Search</a><span class="icon"><i class="fa fa-dashboard"></i></span></li>
+                 
+				    <span class="row d-flex justify-content-center p-1">
+                     <a class="btn "asp-action="Index" asp-controller="ShowProduct" asp-route-clear="clear" onclick="reset()"  >Clear</a>
+			     	  <button class="btn btn-default "  type="submit" >Apply</button>
+                 </span>
+    
+			    	<li class="menu-hasdropdown">
+					<a href="#">Sort Products</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="sort" for="sort">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="sort" />
+					<ul class="sub-menu-dropdown">
+	                 
+						
+						
+						<li class="menu-hasdropdown">
+
+					   <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortNameA-Z">Name A-Z</a></a>
+					 <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortNameZ-A">Name Z-A</a></a>
+					 <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortPriceLow-High">Price Low-High</a></a>
+					  <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortPriceHigh-Low">Price High-Low</a></a>
+					  <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortHighDiscount">High Discount</a></a>
+					  <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortBestRating">Best Rating</a></a>
+					  <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortBestSelling">Best Selling</a></a>
+					   <a id="item"><a asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortNewProducts">Newest Products</a></a>
+	          				
+						</li>
+						
+					</ul>
+				</li>
+
+				@if (@ViewBag.Filter is not null && @ViewBag.Filter.hasvalue )
+					{
+
+						@if (@ViewBag.Filter.brandFilters is not null && @ViewBag.Filter.brandFilters.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Brands</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="brand" for="brand">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="brand" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.brandFilters"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.brandFilters.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.brandFilters[item]">@ViewBag.Filter.brandFilters[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+						@if (@ViewBag.Filter.countryOfOrigins is not null && @ViewBag.Filter.countryOfOrigins.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Country Of Origin</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="countryOfOrigins" for="countryOfOrigins">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="countryOfOrigins" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.countryOfOrigins"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Country --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.countryOfOrigins.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.countryOfOrigins[item]">@ViewBag.Filter.countryOfOrigins[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.cureTypes is not null && @ViewBag.Filter.cureTypes.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Cure Type</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="cureTypes" for="cureTypes">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="cureTypes" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.cureTypes"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Cure Types --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.cureTypes.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.cureTypes[item]">@ViewBag.Filter.cureTypes[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+						@if (@ViewBag.Filter.bureColorCodes is not null && @ViewBag.Filter.bureColorCodes.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Bure Color Code</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="bureColorCodes" for="bureColorCodes">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="bureColorCodes" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.bureColorCodes"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Bure Color Codes --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.bureColorCodes.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.bureColorCodes[item]">@ViewBag.Filter.bureColorCodes[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.bureMaximumRPMs is not null && @ViewBag.Filter.bureMaximumRPMs.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Bure Maximum RPM</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="bureMaximumRPMs" for="bureMaximumRPMs">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="bureMaximumRPMs" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.bureMaximumRPMs"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Bure Maximum RPM --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.bureMaximumRPMs.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.bureMaximumRPMs[item]">@ViewBag.Filter.bureMaximumRPMs[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.shades is not null && @ViewBag.Filter.shades.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Shades</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="shades" for="shades">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="shades" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.shades"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Shades --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.shades.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.shades[item]">@ViewBag.Filter.shades[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.bureShapes is not null && @ViewBag.Filter.bureShapes.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Bure Shapes</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="bureShapes" for="bureShapes">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="bureShapes" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.bureShapes"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Bure Shapes --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.bureShapes.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.bureShapes[item]">@ViewBag.Filter.bureShapes[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.BureOrderNumbers is not null && @ViewBag.Filter.BureOrderNumbers.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">Bure Order Numbers</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="BureOrderNumbers" for="BureOrderNumbers">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="BureOrderNumbers" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.BureOrderNumbers"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Bure Order Number --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.BureOrderNumbers.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.BureOrderNumbers[item]">@ViewBag.Filter.BureOrderNumbers[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.fileMaterials is not null && @ViewBag.Filter.fileMaterials.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">File Material</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="fileMaterials" for="fileMaterials">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="fileMaterials" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.fileMaterials"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select File Material --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.fileMaterials.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.fileMaterials[item]">@ViewBag.Filter.fileMaterials[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+
+
+
+
+						@if (@ViewBag.Filter.fileShapes is not null && @ViewBag.Filter.fileShapes.Count > 0)
+						{
+
+							<li class="menu-hasdropdown">
+								<a href="#">FileShapes</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+								<label title="fileShapes" for="fileShapes">
+									<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+								</label>
+								<input type="checkbox" class="sub-menu-checkbox" id="fileShapes" />
+								<ul class="sub-menu-dropdown">
+
+
+
+									<li class="menu-hasdropdown" style="overflow-y:auto;height:15rem;">
+
+
+										<select asp-for="FilterProductViewModel.fileShapes"  data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex"class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select File Shape --" multiple aria-label="size 3 select example">
+
+											@for (var item = 0; item <= @ViewBag.Filter.fileShapes.Count - 1; item++)
+											{
+												<option  value="@ViewBag.Filter.fileShapes[item]">@ViewBag.Filter.fileShapes[item]</option>
+
+											}
+										</select>
+
+
+
+
+									</li>
+
+								</ul>
+							</li>
+
+						}
+
+
+
+
+
+						<li class="menu-hasdropdown">
+							<a href="#">Price</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+							<label title="Price" for="Price">
+								<span class="downarrow"><i class="fa fa-caret-down"></i></span>
+							</label>
+							<input type="checkbox" class="sub-menu-checkbox" id="Price" />
+							<ul class="sub-menu-dropdown">
+
+
+
+								<li class="menu-hasdropdown p-2" style="overflow-y:auto;height:15rem;">
+
+
+									<div class="form-group col-md-6">
+										<label style="font-size:1.3rem">Min</label>
+										<input type="number" class="form-control"  style="font-size:1.2rem;width:8rem" asp-for="FilterProductViewModel.LowPrice" placeholder="@ViewBag.Filter.LowPrice"   min="@ViewBag.Filter.LowPrice"  max="@max"  onkeypress="if(this.value.length == 2) return false;"  />
+									</div>
+									<div class="form-group col-md-6 text-right">
+										<label style="font-size:1.3rem">Max</label>
+										<input type="number" class="form-control" style="font-size:1.2rem;width:8rem"asp-for="FilterProductViewModel.HighPrice" placeholder="@ViewBag.Filter.HighPrice" min="@min" max="@ViewBag.Filter.HighPrice"   onkeypress="if(this.value.length == 2) return false;"  />
+									</div>
+
+
+
+
+								</li>
+
+							</ul>
+						</li>
+					}
+
+
+
+			
+				</form>
+			</ul>
+
+		</div>
+	</nav>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="new-wrapper">
+
+	<div style="margin-top:2rem" >
+
+  <div class="col-12">
+   
+ 
+
+
+
+	  
+				@if (@ViewBag.list is not null && @ViewBag.list.Count > 0)
+				{
+
+					<div class="products  shopping-cart" style="padding:0;margin:0;outline:0;margin-left:3rem;">
+
+						<h1 class="heading">@ViewBag.name</h1>
+
+						<div class="box-container">
+							@foreach (var item in ViewBag.list)
+							{
+								<form asp-action="AddToCart"asp-controller="Cart" class="box">
+									<input type="hidden" asp-for="CartViewModel.Ordername" value="@item.Ordername" />
+									<input type="hidden" asp-for="CartViewModel.Price" value="@item.Price"/>
+									<input type="hidden" asp-for="CartViewModel.Discount" value="@item.Discount"/>
+									<input type="hidden" asp-for="CartViewModel.imgpath" value="@item.imgpath"/>
+									<input type="hidden" asp-for="CartViewModel.Shade" value="@item.Shade"/>
+									<input type="hidden" asp-for="CartViewModel.CureType" value="@item.CureType"/>
+									<input type="hidden" asp-for="CartViewModel.CountryOfOrigin" value="@item.CountryOfOrigin"/>
+									<input type="hidden" asp-for="CartViewModel.BurColorCode" value="@item.BurColorCode"/>
+									<input type="hidden" asp-for="CartViewModel.BurMaximumRPM" value="@item.BurMaximumRPM"/>
+									<input type="hidden" asp-for="CartViewModel.BurShape" value="@item.BurShape"/>
+									<input type="hidden" asp-for="CartViewModel.FileMaterial" value="@item.FileMaterial"/>
+									<input type="hidden" asp-for="CartViewModel.FileShape" value="@item.FileShape"/>
+									<input type="hidden" asp-for="CartViewModel.BrandName" value="@item.BrandName"/>
+									<input type="hidden" asp-for="CartViewModel.BurOrderNumber" value="@item.BurOrderNumber"/>
+									<input type="hidden"asp-for="CartViewModel.ProductId" value="@item.ProductId"/>
+
+									<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@item.ProductId" name="add_to_wishlist"></a>
+									<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@item.ProductId" class="fas fa-eye"></a>
+									<img src="~/uploaded_img/@item.imgpath" alt="">
+									<div style="justify-content:start;display:flex;">
+										<div class="name">@item.Ordername</div>
+									
+
+								@if(@item.Rating>0)
+								{
+										 <span style="padding-top:.14rem;margin: 0 .3rem">
+											   @for(var i=1;i<=@item.Rating;i++)
+												{
+													<span class="starGlowN"></span>
+												}
+												@for(var i=(@item.Rating+1);i<=5;i++)
+												{
+													<span class="starFadeN"></span>
+												}
+
+										 </span> 
+										<span class="review">(@item.CountRating)</span>
+
+								}
+									</div>
+
+									@if (@item.Price != @item.DiscountPrice)
+									{
+										<span class="oldprice">@item.Price EGP</span>
+										<span class="discount">@item.Discount% off</span>
+									}
+									else
+									{
+										<span class="oldprice"></span>
+										<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+									}
+									<div class="flex">
+
+										<div class="price">@item.DiscountPrice EGP</div>
+
+										<input type="number" asp-for="CartViewModel.Quantity" class="qty" min="1" max="@item.Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+										<button type="submit" class="fas fa-shopping-cart"  name="update_qty"></button>
+									</div>
+								</form>
+
+							}
+
+						</div>
+						<br />
+						<nav class="...">
+							@if (pager.TotalPages > 0)
+							{
+								<ul class="pagination justify-content-center pagination-lg">
+									@if (pager.CurrentPage > 1)
+									{
+										<li class="page-item">
+											<a class="page-link"asp-action="Index" asp-controller="ShowProduct" asp-route-pg="1">Frist</a>
+										</li>  
+										<li>
+											<a class="page-link"asp-action="Index" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+										</li>
+									}
+									@for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+									{
+										<li class="page-item" @(pge==pager.CurrentPage? "active" :"")>
+											<a class="page-link"asp-action="Index" asp-controller="ShowProduct" asp-route-pg="@pge">@pge</a>
+										</li>
+									}
+									@if (pager.CurrentPage < pager.TotalPages)
+									{
+										<li class="page-item">
+											<a class="page-link"asp-action="Index" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+										</li> 
+										<li class="page-item">
+											<a class="page-link"asp-action="Index" asp-controller="ShowProduct" asp-route-pg="@(pager.TotalPages)">Last</a>
+										</li>
+									}
+
+								</ul>
+							}
+						</nav>
+					</div>
+
+				}
+			</div>
+		
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+       
+@section Scripts{
+<script>
+		$('.nav-toggle').click(function (e) {
+
+    e.preventDefault();
+    $("html").toggleClass("openNav");
+    $(".nav-toggle").toggleClass("active");
+
+});
+</script>
+<script>
+  function reset(){
+      document.getElementById("myform").reset();
+  }
+</script>
+  
+
+    <partial name="_ValidationScriptsPartial" />
+}

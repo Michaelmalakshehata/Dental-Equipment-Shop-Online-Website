@@ -1,0 +1,123 @@
+﻿@model List< Brand>
+@{
+    ViewData["Title"] = "Deleted Brands";
+    Layout = "_AdminLayout";
+     Pager pager=new Pager();
+    int pageNo=0;
+    if(ViewBag.pager is not null)
+    {
+        pager = ViewBag.pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+@section verticalmenu{
+
+           <span class="d-flex justify-content-center p-1">
+                    <a asp-action="DeletedBrand" asp-controller="Brand" asp-route-clear="clear" class="btn btn-primary m-2">Refresh</a>
+            </span>
+            <form>
+                 <div >
+                    <input type="search" id="form1" name="search" class="form-control m-1" />
+                </div>
+            </form>
+           
+}
+
+          
+    @if (@Model is not null && @Model.Count > 0)
+{
+    <div class="tbcontent">
+        <table class="table table-bordered mt-3 table-striped table-hover">
+            <thead class=" text-center" style="background:#2b6777 ;color:white">
+                <tr style="margin:auto">
+                    <th>Code</th>
+                    <th>Name</th>
+
+                    <th>Image</th>
+
+                    <th>Is Deleted</th>
+                    <th>UserName</th>
+                    <th>Create Date</th>
+                    <th>Update Date</th>
+                    <th>Delete Date</th>
+                    <th>Restore Date</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody class="m-1">
+                @foreach (var itm in Model)
+                {
+                    <tr style="margin:auto">
+                        <td>@itm.Id</td>
+                        <td>@itm.Name</td>
+
+                        <td>
+                            <img src="~/uploaded_img/@itm.imgpath" style="width:4rem" class="img-thumbnail">
+                        </td>
+
+                        <td>@itm.IsDeleted</td>
+                        <td>@itm.UserName</td>
+                        <td>@itm.CreateDate</td>
+                        <td>@itm.UpdateDate</td>
+                        <td>@itm.DeleteDate</td>
+                        <td>@itm.RestoreDate</td>
+                        <td>
+                            <a asp-action="RestoreBrand" id="btn" asp-controller="Brand"asp-route-id="@itm.Id"onclick="return confirm('are you sure to Restore this item @itm.Name')" class="btn btn-danger">Restore</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <nav class="...">
+            @if (pager.TotalPages > 0)
+            {
+                <ul class="pagination justify-content-center pagination-lg">
+                    @if (pager.CurrentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"asp-action="DeletedBrand" asp-controller="Brand" asp-route-pg="1">Frist</a>
+                        </li>  
+                        <li>
+                            <a class="page-link"asp-action="DeletedBrand" asp-controller="Brand" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                        </li>
+                    }
+                    @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                    {
+                        <li class="page-item" @(pge==pager.CurrentPage? "active" :"")>
+                            <a class="page-link"asp-action="DeletedBrand" asp-controller="Brand" asp-route-pg="@pge">@pge</a>
+                        </li>
+                    }
+                    @if (pager.CurrentPage < pager.TotalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"asp-action="DeletedBrand" asp-controller="Brand" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                        </li> 
+                        <li class="page-item">
+                            <a class="page-link"asp-action="DeletedBrand" asp-controller="Brand" asp-route-pg="@(pager.TotalPages)">Last</a>
+                        </li>
+                    }
+
+                </ul>
+            }
+        </nav>
+    </div>
+
+    }
+    <script>
+        function GetDataSearch(e){
+            if (e.key == "Enter") {
+                var search = $(this).closest('form').serialize();
+                  $.ajax({
+                url:"/Brand/DeletedBrand/"+search,
+                      data: {"search":search},
+                      success: function(result) {
+                          
+                      }
+
+            });
+            }
+            return false;  
+        }
+    </script>

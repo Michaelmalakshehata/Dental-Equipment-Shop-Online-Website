@@ -1,0 +1,191 @@
+﻿@model CartViewModel
+@{
+	ViewBag.Related=ViewData["RelatedProducts"];
+}
+	<style>
+
+	#Htitle{
+		font-weight:300;
+		color:white;
+		padding:.5rem 2rem;
+		font-size:1.3rem;
+	}
+	#seeall{
+		color:black;
+		background-color:white;
+		width:fit-content;
+		height:fit-content;
+		border-radius:.8rem;
+		padding:.5rem;
+		font-size:1.2rem;
+
+	}
+	#seeall:hover {
+    color: white;
+	background-color:black;
+}
+	</style>
+
+
+@if (ViewBag.Related is not null && ViewBag.Related.Count>1)
+{
+
+
+  <div class="products shopping-cart" style="margin-top:1rem">
+	<div class="row col-12">
+		<div class=" col-6 d-flex ">
+			<h1  id="Htitle">Related Best Selling</h1>
+        </div>
+		<div class=" col-6 d-flex justify-content-end">
+			<a class="ml-auto justify-content-end" id="seeall" asp-action="Index" asp-controller="ShowProduct" asp-route-sort="SortBestSelling">See All</a>
+		</div>
+	</div>
+<div id="myCarousel" class="carousel slide container-fluid" data-bs-ride="carousel">
+  <div class="carousel-inner col-12 row">
+
+	
+				@for(var item=0;item<= ViewBag.Related.Count-1;item++)
+				{	
+					
+					@if(item==0)
+					{
+						<div class="carousel-item active"id="item5">
+							
+                      <div class=" col-md-4 ">
+
+						<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.Related[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.Related[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.Related[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.Related[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.Related[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.Related[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.Related[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.Related[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.Related[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.Related[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.Related[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.Related[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.Related[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.Related[item].BurOrderNumber"/>
+								 <input type="hidden"asp-for="ProductId" value="@ViewBag.Related[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.Related[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.Related[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.Related[item].imgpath" alt="">
+								<div class="name">@ViewBag.Related[item].Ordername</div>
+							
+								@if (@ViewBag.Related[item].Price>@ViewBag.Related[item].DiscountPrice )
+								{
+									<span class="oldprice">@ViewBag.Related[item].Price EGP</span>
+									<span class="discount">@ViewBag.Related[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+									
+										<div class="price">@ViewBag.Related[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.Related[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+								 <button type="submit" class="fas fa-shopping-cart" name="update_qty"></button>
+								</div>
+
+							 </form>
+
+
+						</div>
+
+						</div>
+						</div>
+					}
+					else
+					{
+						<div class="carousel-item " id="item5">
+							
+                     <div class=" col-md-4">                      
+						  
+						<div class="box-container">
+							
+							<form asp-action="AddToCart"asp-controller="Cart" class="box">
+								<input type="hidden" asp-for="Ordername" value="@ViewBag.Related[item].Ordername" />
+								<input type="hidden" asp-for="Price" value="@ViewBag.Related[item].Price"/>
+								<input type="hidden" asp-for="Discount" value="@ViewBag.Related[item].Discount"/>
+								<input type="hidden" asp-for="imgpath" value="@ViewBag.Related[item].imgpath"/>
+								<input type="hidden" asp-for="Shade" value="@ViewBag.Related[item].Shade"/>
+								<input type="hidden" asp-for="CureType" value="@ViewBag.Related[item].CureType"/>
+								<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.Related[item].CountryOfOrigin"/>
+								<input type="hidden" asp-for="BurColorCode" value="@ViewBag.Related[item].BurColorCode"/>
+								<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.Related[item].BurMaximumRPM"/>
+								<input type="hidden" asp-for="BurShape" value="@ViewBag.Related[item].BurShape"/>
+								<input type="hidden" asp-for="FileMaterial" value="@ViewBag.Related[item].FileMaterial"/>
+								<input type="hidden" asp-for="FileShape" value="@ViewBag.Related[item].FileShape"/>
+								<input type="hidden" asp-for="BrandName" value="@ViewBag.Related[item].BrandName"/>
+								<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.Related[item].BurOrderNumber"/>
+								 <input type="hidden"asp-for="ProductId" value="@ViewBag.Related[item].ProductId"/>
+								<a class="fas fa-heart" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.Related[item].ProductId" name="add_to_wishlist"></a>
+								<a asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-Id="@ViewBag.Related[item].ProductId" class="fas fa-eye"></a>
+								<img src="~/uploaded_img/@ViewBag.Related[item].imgpath" alt="">
+								<div class="name">@ViewBag.Related[item].Ordername</div>
+							
+								@if (@ViewBag.Related[item].Price>@ViewBag.Related[item].DiscountPrice )
+								{
+									<span class="oldprice">@ViewBag.Related[item].Price EGP</span>
+									<span class="discount">@ViewBag.Related[item].Discount% off</span>
+								}
+								else
+								{
+									<span class="oldprice"></span>
+									<span class="discount" style="background-color:transparent;margin:.265rem 0"></span>
+								}
+								<div class="flex">
+
+									
+										<div class="price">@ViewBag.Related[item].DiscountPrice EGP</div>
+									
+									<input type="number" asp-for="Quantity" class="qty" min="1" max="@ViewBag.Related[item].Quantity" onkeypress="if(this.value.length == 2) return false;" value="1">
+								 <button type="submit" class="fas fa-shopping-cart" name="update_qty"></button>
+								</div>
+
+							 </form>
+
+
+						</div>
+				  
+				   </div>
+				   </div>
+					}
+                
+					
+				}
+     
+
+    </div>
+  <button class="carousel-control-prev " style="width:4rem" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden ">Previous</span>
+  </button>
+  <button class="carousel-control-next " style="width:4rem" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+    <span class="visually-hidden ">Next</span>
+  </button>
+</div>
+   </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

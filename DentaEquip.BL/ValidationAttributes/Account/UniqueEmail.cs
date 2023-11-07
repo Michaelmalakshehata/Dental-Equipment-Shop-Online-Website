@@ -1,0 +1,27 @@
+﻿using DentaEquip.DAL.Context;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DentaEquip.BL.ValidationAttributes.Account
+{
+    public class UniqueEmail:ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            EntityContext context = (EntityContext)validationContext.GetService(typeof(EntityContext));
+            if (value is null)
+                return null;
+            string newemail = value.ToString();
+            var Email = context.Users.FirstOrDefault(s => s.Email.Equals(newemail));
+            if (Email is not null)
+            {
+                return new ValidationResult("Email Already Exist");
+            }
+            return ValidationResult.Success;
+        }
+    }
+}

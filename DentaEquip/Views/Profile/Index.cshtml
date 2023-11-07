@@ -1,0 +1,18 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "_Layout";
+}
+
+
+<section class="user-details">
+
+   <div class="user">
+      <img src="/images/user-icon.png" alt="">
+      <p><i class="fas fa-user"></i> <span>@Model.UserName</span></p>
+      <p><i class="fas fa-envelope"></i> <span >@Model.Email</span></p>
+      <p class="address"><i class="fas fa-map-marker-alt"></i> <span>@Model.Address</span></p>
+   </div>
+   <a class="btn" asp-action="ForgotPassword" asp-controller="Account">Reset Password</a>
+   <a class="btn" asp-action="DeleteAccount" asp-controller="Profile" asp-route-applicationUser="@Model.UserName"onclick="return confirm('are you sure to delete this Account @Model.UserName')">Delete Account</a>
+</section>

@@ -1,0 +1,169 @@
+﻿.form {
+    background-color: aliceblue;
+    margin: 0 5%;
+    padding: .5em .5em;
+    border-radius: 1.25em;
+    width:100%;
+    overflow-x:hidden;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+html {
+    font-size: 1rem;
+}
+.col {
+    padding: 1em 2em;
+    text-align: left;
+    margin: auto;
+}
+
+.form-control {
+    width: 100%;
+    border: none;
+    padding: .625em 1em;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+.bt {
+    padding: .44em .6em;
+    background-color: tomato;
+    border: none;
+    border-radius: 3.125em;
+    text-transform: uppercase;
+    color: azure;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pagination-lg .page-link {
+    padding: .5rem .4rem;
+    font-size: 1rem;
+}
+
+.btn {
+    font-size: 1em;
+   
+}
+.tbcontent{
+    overflow-x:auto;
+    margin-left:3.3rem;
+}
+
+@media only screen and (max-width: 55.625em) {
+    html,body {
+        font-size: 75%;
+    }
+    .row {
+        grid-template-columns: auto auto;
+    }
+   
+    table{
+        width:80%;
+    }
+    .bt {
+        padding: .24em .4em;
+      
+        font-size: .75rem;
+    }
+    th, td {
+        font-size: .75em;
+    }
+    .pagination-lg .page-link {
+        padding: .5rem .4rem;
+       font-size: .75rem;
+   }
+   
+ 
+  
+    .tbcontent {
+        margin-left: 1rem;
+    }
+    .col {
+        padding: .5em 1em;
+        
+    }
+
+    .form-control {
+       font-size:.75rem;
+        padding: .625em 1em;
+    }
+
+    label {
+       font-size: .75rem;
+   }
+   
+    .form-select{
+        font-size:.75rem;
+    }
+
+}
+
+@media only screen and (max-width: 42.5em) {
+    .row {
+        grid-template-columns: auto;
+    }
+    th, td {
+/*        font-size: .7em;
+*/    }
+
+    table {
+        width: 80%;
+    }
+    .bt {
+        padding: .24em .4em;
+       
+        font-size: .75rem;
+    }
+    .pagination-lg .page-link {
+        padding: .5rem .4rem;
+       font-size: .75rem;
+    }
+ 
+    .tbcontent {
+        margin-left: 1rem;
+    }
+    .col {
+        padding: .3em 1em;
+    }
+
+    .form-control {
+       font-size: .75rem;
+       padding: .425em .6em;
+    }
+
+    label {
+        font-size: .75rem;
+    }
+    
+    .form-select {
+        font-size: .7rem;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

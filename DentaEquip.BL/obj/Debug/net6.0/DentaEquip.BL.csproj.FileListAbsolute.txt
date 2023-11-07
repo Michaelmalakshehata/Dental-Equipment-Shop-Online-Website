@@ -1,0 +1,17 @@
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.BL.deps.json
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.BL.runtimeconfig.json
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.BL.dll
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.BL.pdb
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.DAL.dll
+F:\project\DentaEquip\DentaEquip.BL\bin\Debug\net6.0\DentaEquip.DAL.pdb
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.csproj.AssemblyReference.cache
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.GeneratedMSBuildEditorConfig.editorconfig
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.AssemblyInfoInputs.cache
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.AssemblyInfo.cs
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.csproj.CoreCompileInputs.cache
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.csproj.CopyComplete
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.dll
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\refint\DentaEquip.BL.dll
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.pdb
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\DentaEquip.BL.genruntimeconfig.cache
+F:\project\DentaEquip\DentaEquip.BL\obj\Debug\net6.0\ref\DentaEquip.BL.dll

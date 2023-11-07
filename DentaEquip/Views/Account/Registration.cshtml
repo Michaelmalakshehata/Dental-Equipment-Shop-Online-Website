@@ -1,0 +1,71 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_Layout";
+}
+@section stylecss{
+   <style>
+       .renderbody {
+display:flex;
+justify-content:center;
+align-items:center;
+}
+       #label{
+           margin:auto 0;
+           width:6.5rem;
+       }
+       #username, #email, #address{
+           margin-left:.5rem;
+       }
+       #center{
+           justify-content:center;
+           display:flex;
+       }
+
+   </style>
+}
+<section class="d-flex justify-content-center col-8" style="background-color:#c0cce5;">
+   <form asp-action="Registration" asp-controller="Account">
+      <h3 style="font-size:1.4rem">Register now</h3>
+       <div asp-validation-summary="All" class="text-danger" ></div>
+       <div class="form-outline mb-4" id="center">
+                      <label class="form-label" for="username" id="label">UserName</label>
+           <input type="text" asp-for="Username" required id="username" maxlength="25"minlength="2"  class="form-control">
+        </div>
+        <div class="form-outline mb-4" id="center">
+                       <label class="form-label" for="email" id="label">Email</label>
+
+           <input type="email" asp-for="Email" required id="email" maxlength="50"minlength="12"   class="form-control">
+        </div>
+         <div class="form-outline mb-4" id="center">
+                       <label class="form-label" for="address" id="label">Address</label>
+
+           <input type="text" asp-for="Address" required id="address" maxlength="50"minlength="5"  class="form-control">
+        </div>
+        <div class="row mb-4">
+
+            <div class="col">
+                <div class="form-outline mb-4">
+                                    <label class="form-label" for="password">Password</label>
+
+                <input type="password" asp-for="Password" required id="password" maxlength="20"minlength="5"  class="form-control">
+               </div>
+           </div>
+
+            <div class="col">
+                <div class="form-outline mb-4">
+                                    <label class="form-label" for="cnpassword">Confirm Password</label>
+
+                <input type="password" asp-for="ConfirmPassword" required id="cnpassword" maxlength="20"minlength="5"  class="form-control">
+               </div>
+            </div>
+
+        </div>
+       
+      <button type="submit"  class="btn btnprimary btn-block" name="submit">Register</button>
+   </form>
+
+</section>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

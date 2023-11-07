@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewData["Title"]</title>
+  
+     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">   <!-- custom css file link  -->
+
+    <link rel="stylesheet" href="~/css/verticalmenu.css">
+	<link rel="stylesheet" href="~/css/AdminStyle.css">
+	        <link rel="stylesheet" href="~/css/LoadngStyle.css">
+
+    @await RenderSectionAsync("stylecss", required: false)
+</head>
+<body>
+   <div id="loading" >
+       <img src="~/Images//loading.gif">
+    </div>
+  
+ 
+    
+
+<div class="primary-nav">
+
+	<button href="#" class="hamburger open-panel nav-toggle">
+<span class="screen-reader-text">Menu</span>
+</button>
+
+	<nav role="navigation" class="menu">
+
+		   <a asp-controller="Home" asp-action="Index" class="logotype">DentaEquip</a>
+		<div class="overflow-container">
+
+			<ul class="menu-dropdown">
+
+				<li><a href="#">Dashboard</a><span class="icon"><i class="fa fa-dashboard"></i></span></li>
+				  @await RenderSectionAsync("verticalmenu", required: false)
+
+
+				<li class="menu-hasdropdown">
+					<a href="#">MainCategory</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="MainCategory" for="MainCategory">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="MainCategory" />
+					<ul class="sub-menu-dropdown">
+	                 
+						
+						
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="MainCategory">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort MainCategory" for="AllMainCategory">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllMainCategory" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="MainCategory" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="MainCategory" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+							</ul>
+						</li>
+
+
+						  <li class="menu-hasdropdown">
+							<a asp-action="DeletedCategory" asp-controller="MainCategory">Deleted</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Deleted Category" for="DeletedCategory">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="DeletedCategory" />
+
+							<ul class="sub-menu-dropdown">
+							    <li><a asp-action="DeletedCategory" asp-controller="MainCategory" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="DeletedCategory" asp-controller="MainCategory" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+							</ul>
+						</li>
+
+
+						
+					</ul>
+				</li>
+
+				
+				<li class="menu-hasdropdown">
+					<a href="#">SubCategory</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="SubCategory" for="SubCategory">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="SubCategory" />
+
+					<ul class="sub-menu-dropdown">
+
+
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="SubCategory">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort SubCategory" for="AllSubCategory">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllSubCategory" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortSubCategoryTypeA-Z">Sort By Type A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortMainCategoryZ-A" >Sort By MainCategory Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortMainCategoryA-Z">Sort By MainCategory A-Z</a></li>
+							</ul>
+						</li>
+
+
+						  <li class="menu-hasdropdown">
+							<a asp-action="DeletedSubCategory" asp-controller="SubCategory">Deleted</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Deleted SubCategory" for="DeletedSubCategory">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="DeletedSubCategory" />
+
+							<ul class="sub-menu-dropdown">
+							   <li><a asp-action="DeletedSubCategory" asp-controller="SubCategory" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="DeletedSubCategory" asp-controller="SubCategory" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="SubCategory" asp-route-sort="SortSubCategoryTypeA-Z">Sort By Type A-Z</a></li>
+								<li><a asp-action="DeletedSubCategory" asp-controller="SubCategory" asp-route-sort="SortMainCategoryA-Z">Sort By MainCategory A-Z</a></li>
+								<li><a asp-action="DeletedSubCategory" asp-controller="SubCategory" asp-route-sort="SortMainCategoryZ-A" >Sort By MainCategory Z-A</a></li>
+							</ul>
+						</li>
+
+
+
+						
+					</ul>
+				</li>
+
+				<li class="menu-hasdropdown">
+					<a href="#">Brand</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="Brand" for="Brand">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="Brand" />
+
+					<ul class="sub-menu-dropdown">
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="Brand">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Brand" for="AllBrand">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllBrand" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="Brand" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="Brand" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+							</ul>
+						</li>
+
+
+						  <li class="menu-hasdropdown">
+							<a asp-action="DeletedBrand" asp-controller="Brand">Deleted</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Deleted Brand" for="DeletedBrand">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="DeletedBrand" />
+
+							<ul class="sub-menu-dropdown">
+							    <li><a asp-action="DeletedBrand" asp-controller="Brand" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="DeletedBrand" asp-controller="Brand" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="menu-hasdropdown">
+					<a href="#">Product</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="Product" for="Product">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="Product" />
+
+					<ul class="sub-menu-dropdown">
+
+
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="Product">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Product" for="AllProduct">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllProduct" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortQuantityLow-High">Sort By Quantity Low-High</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortSubCategoryA-Z">Sort By SubCategory A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortSubCategoryZ-A" >Sort By SubCategory Z-A</a></li>
+
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortBrandA-Z">Sort By Brand A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortBrandZ-A" >Sort By Brand Z-A</a></li>
+
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortPriceHigh-Low">Sort By Price High-Low</a></li>
+								<li><a asp-action="Index" asp-controller="Product" asp-route-sort="SortPriceLow-High" >Sort By Price Low-High</a></li>
+
+							</ul>
+						</li>
+
+
+						  <li class="menu-hasdropdown">
+							<a asp-action="Deletedproduct" asp-controller="Product">Deleted</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Deleted Product" for="DeletedProduct">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="DeletedProduct" />
+
+							<ul class="sub-menu-dropdown">
+							    <li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortNameA-Z">Sort Name A-Z</a></li>
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortNameZ-A" >Sort Name Z-A</a></li>
+
+				                <li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortSubCategoryA-Z">Sort By SubCategory A-Z</a></li>
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortSubCategoryZ-A" >Sort By SubCategory Z-A</a></li>
+
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortBrandA-Z">Sort By Brand A-Z</a></li>
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortBrandZ-A" >Sort By Brand Z-A</a></li>
+
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortPriceHigh-Low">Sort By Price High-Low</a></li>
+								<li><a asp-action="Deletedproduct" asp-controller="Product" asp-route-sort="SortPriceLow-High" >Sort By Price Low-High</a></li>
+
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+
+
+
+
+
+				<li class="menu-hasdropdown">
+					<a href="#">Request Orders</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="Request" for="Request">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="Request" />
+
+					<ul class="sub-menu-dropdown">
+
+
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="RequestOrder">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Request" for="AllRequest">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllRequest" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="RequestOrder" asp-route-sort="SortNameA-Z">Sort UserName A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="RequestOrder" asp-route-sort="SortNameZ-A" >Sort UserName Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="RequestOrder" asp-route-sort="SortNewRequests" >Sort New Requets</a></li>
+								
+
+								<li><a asp-action="Index" asp-controller="RequestOrder" asp-route-sort="SortPriceHigh-Low">Sort By Price High-Low</a></li>
+								<li><a asp-action="Index" asp-controller="RequestOrder" asp-route-sort="SortPriceLow-High" >Sort By Price Low-High</a></li>
+
+							</ul>
+						</li>
+
+
+						 
+					</ul>
+				</li>
+
+
+
+
+
+				<li class="menu-hasdropdown">
+					<a href="#">Finished Orders</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="Finished" for="Finished">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="Finished" />
+
+					<ul class="sub-menu-dropdown">
+
+
+						<li class="menu-hasdropdown">
+							<a asp-action="Index" asp-controller="FinishedOrder">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Finished Orders" for="AllFinished">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllFinished" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="Index" asp-controller="FinishedOrder" asp-route-sort="SortNameA-Z">Sort UserName A-Z</a></li>
+								<li><a asp-action="Index" asp-controller="FinishedOrder" asp-route-sort="SortNameZ-A" >Sort UserName Z-A</a></li>
+								<li><a asp-action="Index" asp-controller="FinishedOrder" asp-route-sort="SortNewFinished" >Sort New Finished Order</a></li>
+								
+
+								<li><a asp-action="Index" asp-controller="FinishedOrder" asp-route-sort="SortPriceHigh-Low">Sort By Price High-Low</a></li>
+								<li><a asp-action="Index" asp-controller="FinishedOrder" asp-route-sort="SortPriceLow-High" >Sort By Price Low-High</a></li>
+
+							</ul>
+						</li>
+
+
+						 
+					</ul>
+				</li>
+
+
+
+				<li class="menu-hasdropdown">
+					<a href="#">Orders Compelete</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          		<label title="Orders Compelete" for="OrdersCompelete">
+                         <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                   </label>
+					<input type="checkbox" class="sub-menu-checkbox" id="OrdersCompelete" />
+
+					<ul class="sub-menu-dropdown">
+
+
+						<li class="menu-hasdropdown">
+							<a asp-action="OrdersCompelete" asp-controller="FinishedOrder">All</a><span class="icon"><i class="fa fa-gear"></i></span>
+
+	          				<label title="Sort Request" for="AllOrdersCompelete">
+								 <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+						    </label>
+						    <input type="checkbox" class="sub-menu-checkbox" id="AllOrdersCompelete" />
+
+							<ul class="sub-menu-dropdown">
+								<li><a asp-action="OrdersCompelete" asp-controller="FinishedOrder" asp-route-sort="SortHighPrice">Sort By High Price</a></li>
+								<li><a asp-action="OrdersCompelete" asp-controller="FinishedOrder" asp-route-sort="SortBrand" >Sort By Brand A-Z</a></li>
+								<li><a asp-action="OrdersCompelete" asp-controller="FinishedOrder" asp-route-sort="SortCountryOfOrigin" >Sort By Country Of Origin</a></li>
+								
+
+								<li><a asp-action="OrdersCompelete" asp-controller="FinishedOrder" asp-route-sort="SortProductCode">Sort By Product Code</a></li>
+								<li><a asp-action="OrdersCompelete" asp-controller="FinishedOrder" asp-route-sort="SortQuantity" >Sort By Quantity</a></li>
+
+							</ul>
+						</li>
+
+
+						 
+					</ul>
+				</li>
+
+			</ul>
+
+		</div>
+	</nav>
+
+</div>
+
+<div class="new-wrapper">
+
+	<div style="margin-top:2rem" >
+
+			   @RenderBody()
+		
+
+	</div>
+
+</div>
+
+   
+         
+ 
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+        
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-easing/jquery.easing.min.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="~/js/Script.js"></script>
+
+
+
+
+
+@await Component.InvokeAsync("Notyf")
+
+ @await RenderSectionAsync("Scripts", required: false)
+ </body>
+</html>

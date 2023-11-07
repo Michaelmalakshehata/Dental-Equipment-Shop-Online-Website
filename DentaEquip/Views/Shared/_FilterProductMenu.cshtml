@@ -1,0 +1,428 @@
+﻿     @model FilterProductViewModel  
+ 
+     @{
+         
+             FilterProductViewModel filtermodel=ViewData["FilterData"] as FilterProductViewModel;
+         
+     }
+    <style>
+        .btn{
+            background-color:white;
+            border:.1rem solid white;
+        }
+        .bootstrap-select>.dropdown-toggle .bs-placeholder{
+                        color:white;
+
+        }
+    </style> 
+     
+     
+     
+   <div class="filter-menu">
+          <form asp-action="Index" asp-controller="ShowProduct" method="get" id="myform">
+           
+
+
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+    
+                <div class="panel-body row" >
+                  <button class="bt btn-default "  type="submit" >Apply</button>
+                  <a class="bt btn-sm btn-link pull-right visible-sm-inline "asp-action="Index" asp-controller="ShowProduct" asp-route-clear="clear" onclick="reset()"  >Clear</a>
+               
+                </div><!-- /.panel-body -->
+              </div><!-- /.panel-heading -->
+
+              <div class="panel-body">
+                <div class="panel-group" id="filter-menu" role="tablist" aria-multiselectable="true">
+                 
+
+                 
+
+
+       @if(filtermodel.brandFilters is not null&&filtermodel.brandFilters.Any())
+            {
+                     <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading1">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        Brands
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse1" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading1">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+
+                         <select asp-for="brandFilters" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+
+                         @for(var item=0;item<= filtermodel.brandFilters.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.brandFilters[item]">@filtermodel.brandFilters[item]</option>
+
+                            }
+                          </select>
+                           
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+    
+            }
+
+
+
+
+       @if(filtermodel.countryOfOrigins is not null &&filtermodel.countryOfOrigins.Any())
+            {
+                 
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading2">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                       Country Of Origins
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse2" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading2">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                              <select asp-for="countryOfOrigins" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" data-dropup-auto="false" title="--Select Brand --" multiple aria-label="size 3 select example">
+                         @for(var item=0;item<= filtermodel.countryOfOrigins.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.countryOfOrigins[item]">@filtermodel.countryOfOrigins[item]</option>
+
+                            }
+                          </select>
+                           </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+
+              }
+
+
+
+
+       @if(filtermodel.cureTypes is not null &&filtermodel.cureTypes.Any())
+                {
+                              
+                     <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading3">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                       Cure Types
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse3" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading3">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                          <select asp-for="cureTypes" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                              
+                              
+                              @for(var item=0;item<= filtermodel.cureTypes.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.cureTypes[item]">@filtermodel.cureTypes[item]</option>
+
+                            }
+                          </select>
+                         </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                }
+              
+
+
+
+       @if(filtermodel.bureColorCodes is not null &&filtermodel.bureColorCodes.Any())
+                    {
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading4">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        Bur Color Codes
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse4" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading4">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                         <select asp-for="bureColorCodes" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                            
+                             
+                             
+                             @for(var item=0;item<= filtermodel.bureColorCodes.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.bureColorCodes[item]">@filtermodel.bureColorCodes[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+
+
+
+       @if(filtermodel.bureMaximumRPMs is not null &&filtermodel.bureMaximumRPMs.Any())
+
+                    {    
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading5">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        bur Maximum RPM
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse5" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading5">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                           <select asp-for="bureMaximumRPMs" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                              
+                               
+                               
+                               @for(var item=0;item<= filtermodel.bureMaximumRPMs.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.bureMaximumRPMs[item]">@filtermodel.bureMaximumRPMs[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+
+       @if(filtermodel.shades is not null &&filtermodel.shades.Any())
+
+                    {
+                   <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingsix">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                        Shades
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapsesix" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="headingsix">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                           <select asp-for="shades" data-dropup-auto="false" style="color:white;background-color:transparent; width:100%; padding:.1rem .5rem;justify-content:center; display:flex" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                           
+                               
+                               
+                            @for(var item=0;item<= filtermodel.shades.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.shades[item]">@filtermodel.shades[item]</option>
+
+                            }
+                          </select>
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+       @if(filtermodel.bureShapes is not null &&filtermodel.bureShapes.Any())
+
+                    {
+              
+                             
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading7">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        Bur Shapes
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse7" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading7">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                         <select asp-for="bureShapes" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                            
+                             
+                             
+                             @for(var item=0;item<= filtermodel.bureShapes.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.bureShapes[item]">@filtermodel.bureShapes[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+
+       @if(filtermodel.BureOrderNumbers is not null &&filtermodel.BureOrderNumbers.Any())
+
+                    {
+
+                          
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading8">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        Bur order Number
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse8" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading8">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                      <select asp-for="BureOrderNumbers" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                          
+                          
+                          
+                          
+                          @for(var item=0;item<= filtermodel.BureOrderNumbers.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.BureOrderNumbers[item]">@filtermodel.BureOrderNumbers[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+       @if(filtermodel.fileMaterials is not null &&filtermodel.fileMaterials.Any())
+
+                    {
+              
+                            
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading9">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        File Materials
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse9" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading9">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                        <select asp-for="fileMaterials" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                          
+                         
+                            
+                            @for(var item=0;item<= filtermodel.fileMaterials.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.fileMaterials[item]">@filtermodel.fileMaterials[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+
+
+       @if(filtermodel.fileShapes is not null &&filtermodel.fileShapes.Any())
+
+                    {
+                 <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading10">
+                      <a class="panel-title dropdown-toggle   collapsed" style="font-size:1.3rem;text-align:center;"  role="button" data-bs-toggle="collapse" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        File Shapes
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse10" style="min-height:2rem;" class="dropdown-menu-end collapse"  role="tabpanel" aria-labelledby="heading10">
+                      <div class="panel-body" style="font-size:1.3rem;height:15rem;overflow-y:auto; padding:.1rem;">
+                        <div class="form-check flex flex-row " style=" border:none;background-color:transparent;display:flex;justify-content:center;padding:.375rem .5rem;">
+                     
+
+                        <select asp-for="fileShapes" class="selectpicker show-menu-arrow" data-container="body" data-live-search="true" title="--Select Brand --" multiple aria-label="size 3 select example">
+                          
+                            
+                            
+                            
+                            @for(var item=0;item<= filtermodel.fileShapes.Count-1;item++)
+                            {
+                               <option  value="@filtermodel.fileShapes[item]">@filtermodel.fileShapes[item]</option>
+
+                            }
+                          </select>
+
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+                    }
+
+       
+
+                   <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading11">
+                      <a class="panel-title dropdown-toggle  p-5 collapsed" style="font-size:1.3rem;text-align:center;" role="button" data-bs-toggle="collapse" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        Price
+                      </a><!-- /.panel-title -->
+                    </div><!-- /.panel-heading -->
+                    <div id="collapse11" class="dropdown-menu-end collapse" role="tabpanel" aria-labelledby="heading11">
+                      <div class="panel-body" >
+                        <div class="form-check flex flex-row ">
+                           <div class="form-row">
+                             <div class="form-group col-md-6">
+                            <label style="font-size:1.3rem">Min</label>
+                            <input class="form-control"  style="font-size:1.2rem;width:8rem"  placeholder="@filtermodel.LowPrice EGP" min="@filtermodel.LowPrice" max="@filtermodel.HighPrice-1" asp-for="LowPrice" type="number" />
+                           </div>
+                           <div class="form-group col-md-6 text-right">
+                            <label style="font-size:1.3rem">Max</label>
+                            <input class="form-control" style="font-size:1.2rem;width:8rem" placeholder="@filtermodel.HighPrice EGP" min="@filtermodel.LowPrice+1" max="@filtermodel.HighPrice" asp-for="HighPrice" type="number" />
+                        </div>
+                        </div>
+                        
+                        </div>
+                      </div><!-- /.panel-body -->
+                    </div><!-- /.panel-collapse -->
+                  </div><!-- /.panel -->
+
+
+
+               
+                </div><!-- /.panel-group -->
+              </div><!-- /.panel-body -->
+
+            </div><!-- /.panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </form>
+        </div><!-- /.filter-menu -->        
+
+<script>
+  function reset(){
+      document.getElementById("myform").reset();
+  }
+</script>

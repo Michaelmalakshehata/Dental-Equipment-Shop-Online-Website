@@ -1,0 +1,402 @@
+﻿@model CartViewModel
+@{
+
+    Layout ="_Layout";
+    ViewData["Title"] = "View Detailes";
+    ViewData["RelatedProducts"] = ViewBag.Related;
+    Pager pager=new Pager();
+    int pageNo=0;
+    if(ViewBag.Pager is not null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+
+    ViewData["ProductId"]=ViewBag.Product.Id;
+    ViewData["PageNumber"] = pager.TotalPages;
+
+    var ratingSum=ViewBag.RatingSum;
+        var ratingCount=ViewBag.RatingCount;
+        double rating = 0;
+        if(ratingCount>0)
+        {
+            rating = (ratingSum / ratingCount);
+        }
+        var totalRating = int.Parse(rating.ToString());
+    
+}
+
+@section stylecss{
+    <style>
+        #feature{
+            color:black;
+            font-size:1.2rem;
+    }
+
+
+
+    </style>
+    
+}
+<section class="quick-view">
+
+   <h1 class="heading">quick view</h1>
+   <form asp-action="AddToCart"asp-controller="Cart" class="box">
+            <input type="hidden" asp-for="Ordername" value="@ViewBag.Product.Name" />
+            <input type="hidden" asp-for="Price" value="@ViewBag.Product.Price"/>
+            <input type="hidden" asp-for="Discount" value="@ViewBag.Product.Discount"/>
+            <input type="hidden" asp-for="imgpath" value="@ViewBag.Product.imgpath"/>     
+            <input type="hidden" asp-for="Shade" value="@ViewBag.Product.Shade"/>
+			<input type="hidden" asp-for="CureType" value="@ViewBag.Product.CureType"/>
+			<input type="hidden" asp-for="CountryOfOrigin" value="@ViewBag.Product.CountryOfOrigin"/>
+			<input type="hidden" asp-for="BurColorCode" value="@ViewBag.Product.BurColorCode"/>
+			<input type="hidden" asp-for="BurMaximumRPM" value="@ViewBag.Product.BurMaximumRPM"/>
+			<input type="hidden" asp-for="BurShape" value="@ViewBag.Product.BurShape"/>
+			<input type="hidden" asp-for="FileMaterial" value="@ViewBag.Product.FileMaterial"/>
+			<input type="hidden" asp-for="FileShape" value="@ViewBag.Product.FileShape"/>
+			
+			<input type="hidden" asp-for="BurOrderNumber" value="@ViewBag.Product.BurOrderNumber"/>
+            <input type="hidden"asp-for="ProductId" value="@ViewBag.Product.Id"/>
+            @if(ViewBag.Product.Brand is not null)
+            {
+                <input type="hidden" asp-for="BrandName" value="@ViewBag.Product.Brand.Name"/>
+            }
+      <div class="row">
+         
+         
+             @if( @ViewBag.Product.imgpath2.Length>0  && @ViewBag.Product.imgpath3.Length>0)
+             {
+                  <div class="image-container" style="flex:1 1 120rem">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <img src="~/uploaded_img/@ViewBag.Product.imgpath" alt="">
+                        </div>
+    
+   
+                         <div class="carousel-item">
+                          <img src="~/uploaded_img/@ViewBag.Product.imgpath2" class="d-block w-100" alt="...">
+                        </div>
+   
+   
+                        <div class="carousel-item">
+                          <img src="~/uploaded_img/@ViewBag.Product.imgpath3" class="d-block w-100" alt="...">
+                        </div>
+   
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" style="background-color:gray" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" style="background-color:gray" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    </div>
+             }
+             else
+                {
+                    <div class="image-container">
+                    <div class="main-image">
+                    <img src="~/uploaded_img/@ViewBag.Product.imgpath" alt="">
+                    @if(@ViewBag.Product.imgpath3.Length>0)
+                    {
+                         <img src="~/uploaded_img/@ViewBag.Product.imgpath3" alt="">
+                    }
+                     @if(@ViewBag.Product.imgpath2.Length>0)
+                    {
+                         <img src="~/uploaded_img/@ViewBag.Product.imgpath2" alt="">
+                    }
+                    </div>
+                    </div>
+                }
+  
+
+         <div class="content">
+            <div class="name">@ViewBag.Product.Name</div>
+             
+                 @if(totalRating>0){
+                     <div>
+                           @for(var i=1;i<=totalRating;i++)
+                            {
+                                <span class="starGlowN"></span>
+                            }
+                            @for(var i=(totalRating+1);i<=5;i++)
+                            {
+                                <span class="starFadeN"></span>
+                            }
+
+                     </div> 
+                    <span class="review">@ratingCount reviews</span>
+                 }
+              
+         
+            <div class="flex">
+                @if(@ViewBag.Product.Price>ViewBag.Product.DiscountPrice ){
+                        <div class="text-warning" style="text-decoration:line-through;text-decoration-color:red;font-size:1.3rem">@ViewBag.Product.Price EGP</div>
+                        <div class="discount" >%@ViewBag.Product.Discount Off</div> 
+                        }
+                        
+                         <div class="price">@ViewBag.Product.DiscountPrice EGP</div>
+                     <span style="font-size:1.2rem">Available Quantity @ViewBag.Product.Quantity</span>   
+               <input type="number" asp-for="Quantity" value="1" class="qty" min="1" max="@ViewBag.Product.Quantity" onkeypress="if(this.value.length == 2) return false;" >
+            </div>
+            <div class="flex-btn">
+               <button type="submit" class="btn" name="add_to_cart">Add To Cart </button>
+               <a class="option-btn" asp-action="AddToWishList" asp-controller="WishList" asp-route-Id="@ViewBag.Product.Id" name="add_to_wishlist" style="text-decoration:none">add to wishlist</a>
+            </div>
+          </div>
+        </div>
+  </form>
+
+      <div class="contain">
+       	
+        <!-- Tabs Detail -->
+        <div class="tabs">
+            <span data-tab-value="#tab_1">Description</span>
+            <span data-tab-value="#tab_2">Features</span>
+            <span data-tab-value="#tab_3">Reviews</span>
+        </div>
+ 
+        <!-- Tab content -->
+        <div class="tab-content">
+            <div class="tabs__tab active" id="tab_1" data-tab-info>
+                <p style="white-space:pre-wrap;font-size:1.3rem">@ViewBag.Product.Detailes</p>
+ 
+            </div>
+            <div class="tabs__tab" id="tab_2" data-tab-info>
+               @if(@ViewBag.Product.Shade is not null)
+               {
+                   <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Shade</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.Shade</span>
+                   </div>
+               }
+            @if(@ViewBag.Product.CureType is not null)
+               {
+              <div class="justify-content-start mb-3 col-12 row ">             
+                  <span class="col-5" id="feature">Cure Type</span>
+                   <span class="col-7" id="feature" >@ViewBag.Product.CureType</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.CountryOfOrigin is not null)
+               {
+               <div class="justify-content-start mb-3 col-12 row ">                  
+                    <span class="col-5" id="feature">Country Of Origin</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.CountryOfOrigin</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.BurColorCode is not null)
+               {
+                  <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Bur Color Code</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.BurColorCode</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.BurMaximumRPM is not null)
+               {
+                  <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Bur Maximum RPM</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.BurMaximumRPM</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.BurShape is not null)
+               {
+                   <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Bur Shape</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.BurShape</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.FileMaterial is not null)
+               {
+                 <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">File Material</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.FileMaterial</span>
+                   </div>
+               }
+               @if(@ViewBag.Product.FileShape is not null)
+               {
+                   <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">File Shape</span>
+                   <span class="col-7" id="feature" >@ViewBag.Product.FileShape</span>
+                   </div>
+               }
+                 @if(@ViewBag.Product.Brand is not null)
+               {
+                   <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Brand Name</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.Brand.Name</span>
+                   </div>
+               }
+                 @if(@ViewBag.Product.BurOrderNumber is not null)
+               {
+                   <div class="justify-content-start mb-3 col-12 row ">
+                   <span class="col-5" id="feature">Bur Order Number</span>
+                   <span class="col-7" id="feature">@ViewBag.Product.BurOrderNumber</span>
+                   </div>
+               }
+             
+            </div>
+            <div class="tabs__tab" id="tab_3" data-tab-info>
+                <p>
+
+     <div class="col-12" style="font-size:1.2rem">   
+       @foreach(var item in ViewBag.listComment)
+        {
+            <hr />
+            <div class="row">
+                <div class="col-10">
+                   <i style="color:black" class=" mr-2">@item.UserName</i>
+                   <i style="color:black">@item.Date</i>
+                   @if(User.Identity.Name is not null)
+                   {
+                        @if(@User.IsInRole(Roles.adminrole)||User.Identity.Name.Equals(@item.UserName))
+                        {
+                             <a asp-action="Delete" asp-controller="Comments" asp-route-commentId="@item.Id" asp-route-productID="@ViewBag.Product.Id" onclick="return confirm('are you sure to delete this Comment')" style="font-size:1rem;margin-left:3rem;color:red;text-decoration-line:none">X</a>
+                        }
+                   }                
+                   <div class="mt-2">
+                    @for(var i=1;i<=item.Rating;i++)
+                    {
+                        <span class="starGlowN"></span>
+                    }
+                    @for(var i=(item.Rating+1);i<=5;i++)
+                    {                    
+                        <span class="starFadeN"></span>
+                    }
+                   </div>
+                </div>               
+            </div>
+            <div class="col-10 mt-2"style="overflow-x:auto;white-space:pre-wrap;color:white">@item.Comments</div>
+        }
+        <hr />  
+   </div>
+     <nav class="...">
+            @if(pager.TotalPages>0)
+            {
+                <ul class="pagination justify-content-center pagination-lg">
+                    @if(pager.CurrentPage>1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link"asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-pg="1">Frist</a>
+                        </li>  
+                        <li>
+                            <a class="page-link"asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                        </li>
+                    }
+                    @for(var pge =pager.StartPage;pge <= pager.EndPage;pge++)
+                    {
+                        <li class="page-item" @(pge==pager.CurrentPage? "active" :"")>
+                            <a class="page-link"asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-pg="@pge">@pge</a>
+                        </li>
+                    }
+                    @if(pager.CurrentPage<pager.TotalPages)
+                    {
+                       <li class="page-item">
+                            <a class="page-link"asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                        </li> 
+                        <li class="page-item">
+                            <a class="page-link"asp-action="ShowDetailes" asp-controller="ShowProduct" asp-route-pg="@(pager.TotalPages)">Last</a>
+                        </li> 
+                    }
+
+                </ul>
+            }
+        </nav>
+   <div class="col-lg-6 col-md-8 col-sm-10">
+       <partial name="_CommentBox" view-data="ViewData"/>
+   </div>
+
+
+
+
+
+
+
+                </p>
+ 
+            </div>
+        </div>
+    </div>
+
+
+      
+</section>
+
+
+@if( ViewBag.Related is not null && ViewBag.Related.Count>0)
+{
+    <partial name="_RelatedProductMainCategory" view-data="ViewData"/>
+}
+
+
+
+
+@section Scripts{
+        <script type="text/javascript">
+       
+        // function to get each tab details
+        const tabs = document.querySelectorAll('[data-tab-value]')
+        const tabInfos = document.querySelectorAll('[data-tab-info]')
+ 
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document
+                    .querySelector(tab.dataset.tabValue);
+                tabInfos.forEach(tabInfo => {
+                    tabInfo.classList.remove('active')
+                })
+                target.classList.add('active');
+            })
+        })
+    </script>
+
+
+    <script>
+
+
+		$('.carousel #item5').each(function(){
+	      
+				var minPerSlide5 = 3;
+				var next5 = $(this).next();
+				if (!next5.length) {
+				next5 = $(this).siblings(':first');
+				}
+				next5.children(':first-child').clone().appendTo($(this));
+    
+				for (var i=0;i<minPerSlide5;i++) {
+					next5=next5.next();
+					if (!next5.length) {
+        				next5 = $(this).siblings(':first');
+      				}
+        
+					next5.children(':first-child').clone().appendTo($(this));
+				  }
+           
+          
+	});
+
+</script>
+
+
+
+
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
+
+
+
+

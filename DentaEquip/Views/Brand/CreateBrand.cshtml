@@ -1,0 +1,29 @@
+﻿@model BrandViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+
+<div class="form">
+
+   <form asp-action="CreateBrand" asp-controller="Brand" enctype="multipart/form-data">
+       <div asp-validation-summary="All" class="text-danger" ></div>
+       <div class="row">
+       <div class="col">
+           <label asp-for="Name" ></label>
+           <input type="text" asp-for="Name" maxlength="30" minlength="2" placeholder="enter name" class="form-control" autofocus>
+       </div>
+      
+       <div class="col">
+           <label asp-for="File" ></label>
+           <input type="file"accept="image/*" asp-for="File" class="form-control" >
+       </div>
+  
+      </div>
+       <input type="submit" value="Create" class="bt" >
+   </form>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

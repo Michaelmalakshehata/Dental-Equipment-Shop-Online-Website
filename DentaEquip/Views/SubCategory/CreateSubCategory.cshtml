@@ -1,0 +1,36 @@
+﻿@model SubCategoryViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+    SelectList MainCategorylist = new SelectList(ViewBag.list, "Id", "Name");
+}
+<div class="form">
+
+   <form asp-action="CreateSubCategory" asp-controller="SubCategory" enctype="multipart/form-data">
+       <div asp-validation-summary="All" class="text-danger" ></div>
+       <div class="row">
+       <div class="col">
+           <label asp-for="Name" ></label>
+           <input type="text" asp-for="Name" maxlength="30" minlength="2" placeholder="enter name" class="form-control" autofocus>
+       </div>
+        <div class="col">
+           <label >SubCategory Type</label>
+           <select  asp-for="Type"  class="form-select" >
+               <option value="Consumables" >Consumables</option>
+               <option value="Instrument" >Instrument</option>
+               <option value="Equipment" >Equipment</option>
+           </select>
+       </div>
+       <div class="col">
+           <label asp-for="MainCategoryId">Main Category Name </label>
+           <select asp-items="MainCategorylist" asp-for="MainCategoryId" class="form-select" >
+           </select>
+       </div>
+      </div>
+       <input type="submit" value="Create" class="bt" >
+   </form>
+
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
